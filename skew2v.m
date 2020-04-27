@@ -1,4 +1,4 @@
-function omega = skew2vec(Omega)
+function omega = skew2v(Omega)
 %% Function that returns the vector corresponding to a skew-symmetric matrix
 %
 % Aldo Diaz, University of Campinas, 2020

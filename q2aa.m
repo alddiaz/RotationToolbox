@@ -1,4 +1,4 @@
-function [theta, omega] = q2axisangle(q)
+function [theta, omega] = q2aa(q)
 %% Function that returns the axis-angle parameters of a unit quaternion
 %
 % Aldo Diaz, University of Campinas, 2020

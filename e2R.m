@@ -11,10 +11,11 @@ if nargin < 2
 end
 
 switch unit
-    case {'rad','deg'} % angle given in radians or degrees
+    case {'rad', 'deg'} % angle given in radians or degrees
     	if unit == 'deg'
             e = e*180/pi;
 	end
+	
         Rx = [ 1 0 0;
                0 cos(e(1)) sin(e(1));
                0 -sin(e(1)) cos(e(1)) ];
@@ -25,6 +26,7 @@ switch unit
                -sin(e(3)) cos(e(3)) 0;
                0 0 1 ]; 
         R = Rx*Ry*Rz;
+        
     case 'expm' % exponential map
         R = expm([  0   -e(3)  e(2);
                    e(3)   0   -e(1);

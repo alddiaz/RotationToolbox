@@ -1,4 +1,4 @@
-function Omega = vec2skew(omega, dim)
+function Omega = v2skew(omega, dim)
 %% Function that returns a skew-symmetric matrix corresponding to a vector
 %
 % Aldo Diaz, University of Campinas, 2020

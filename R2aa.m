@@ -1,4 +1,4 @@
-function [theta, omega] = R2axisangle(R)
+function [theta, omega] = R2aa(R)
 %% Function that returns the axis-angle parameters of a rotation matrix
 %
 % Aldo Diaz, University of Campinas, 2020
