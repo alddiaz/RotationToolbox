@@ -14,7 +14,7 @@ end
 
 switch method
     case 'BarItzhack'
-        q = BarItzhack(R); % best accuracy
+        q = BarItzhack(R);
         
     case 'Cayley'
         q = Cayley(R); % returns a unit quaternion

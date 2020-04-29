@@ -15,7 +15,7 @@ switch method
         R = expm(theta*v2skew(omega_hat));
     
     otherwise
-        R = eye(3)+sin(theta)*v2skew(omega_hat)+(1-cos(theta))*v2skew(omega_hat)*v2skew(omega_hat);;
+        R = eye(3)+sin(theta)*v2skew(omega_hat)+(1-cos(theta))*v2skew(omega_hat)*v2skew(omega_hat);
 
 end
 
