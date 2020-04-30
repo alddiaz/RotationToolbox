@@ -15,8 +15,13 @@ if unit_quaternion
 end
 
 theta = 2*acos(sum(diag(Q))/4); % angle in radians
-omega_hat = [ (Q(2,1)-Q(1,2)-Q(4,3)+Q(3,4))/4;
-              (Q(3,1)+Q(4,2)-Q(1,3)-Q(2,4))/4;
-              (Q(4,1)-Q(3,2)+Q(2,3)-Q(1,4))/4 ]/(sin(theta/2)); % axis
+
+if theta ~= 0
+    omega_hat = [ (Q(2,1)-Q(1,2)-Q(4,3)+Q(3,4))/4;
+                  (Q(3,1)+Q(4,2)-Q(1,3)-Q(2,4))/4;
+                  (Q(4,1)-Q(3,2)+Q(2,3)-Q(1,4))/4 ]/(sin(theta/2)); % axis
+else
+    omega_hat = [0; 0; 0];
+end
 
 end

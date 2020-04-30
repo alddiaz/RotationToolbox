@@ -15,8 +15,13 @@ if unit_quaternion
 end
 
 theta = 2*acos(q(1)); % angle in radians
-omega_hat = [ q(2);
-    	  q(3);
-    	  q(4) ]/(sin(theta/2)); % axis
+
+if theta ~= 0
+    omega_hat = [ q(2);
+                  q(3);
+                  q(4) ]/(sin(theta/2)); % axis
+else
+    omega_hat = [0; 0; 0];
+end
 
 end
