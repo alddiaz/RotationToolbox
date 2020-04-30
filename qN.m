@@ -6,11 +6,12 @@ function q = qN(q)
 %
 % Aldo Diaz, University of Campinas 2019
 
-q = q/norm(q);
+if norm(q) ~= 1 % if q is a non-unit quaternion
+    q = q/norm(q);
+end
 
-% By convention, always keep scalar quaternion element positive. 
-% This does not change the rotation that is represented
-% by the unit quaternion, since q and -q denote the same rotation.
+% The scalar quaternion component is positive by convention.
+% This does not change the rotation the unit quaternion represents, since q and -q denote the same rotation.
 if q(1) < 0
     q = -q;
 end

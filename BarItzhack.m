@@ -11,8 +11,10 @@ K = [ R(1,1)-R(2,2)-R(3,3)    R(1,2)+R(2,1)           R(1,3)+R(3,1)           R(
       R(1,3)+R(3,1)           R(2,3)+R(3,2)          -R(1,1)-R(2,2)+R(3,3)    R(2,1)-R(1,2);
       R(3,2)-R(2,3)           R(1,3)-R(3,1)           R(2,1)-R(1,2)           R(1,1)+R(2,2)+R(3,3) ]/3;
 
-[ eigVec, eigVal ] = eig(K,'vector'); % eigenvalues and eigenvectors of 'K'
-[~, j_hat] = max(real(eigVal)); % index of the dominant eigenvector of 'K'
-q = real([eigVec(4,j_hat); -eigVec(1,j_hat); -eigVec(2,j_hat); -eigVec(3,j_hat)]);
+[ evec, elambda ] = eig(K,'vector'); % eigenvalues and eigenvectors of 'K'
+
+[~, j_hat] = max(real(elambda)); % column index of the dominant eigenvector of 'K'
+
+q = real([evec(4,j_hat); -evec(1,j_hat); -evec(2,j_hat); -evec(3,j_hat)]);
 
 end

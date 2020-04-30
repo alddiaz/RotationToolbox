@@ -13,7 +13,7 @@ C = [ 1+R(1,1)+R(2,2)+R(3,3)    R(2,3)-R(3,2)           R(3,1)-R(1,3)           
 
 c_abs = [ C(:,1)'*C(:,1); C(:,2)'*C(:,2); C(:,3)'*C(:,3); C(:,4)'*C(:,4) ]; % column-wise square norm of 'C'
 
-[~, j_hat] = max(c_abs); % column index of the dominat eigenvector of 'C'
+[~, j_hat] = max(c_abs); % column index of the dominant eigenvector of 'C'
 
 for i = 1:4
     q(:,i) = sign(C(:,j_hat)'*C(:,i))*C(:,i);
