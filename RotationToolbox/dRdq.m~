@@ -1,7 +1,7 @@
 function [ R1, R2, R3, R4 ] = dRdq(q)
 %% The derivative of R(q) w.r.t. qk, k={1,2,3,4}
 %
-% Aldo Diaz, University of Campinas, 2020
+% Aldo Diaz, University of Campinas, 2019
 
 if norm(q) ~= 1 % 'q' is a non-unit quaternion
     
