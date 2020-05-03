@@ -2,7 +2,7 @@ function e = R2e2(R)
 %% Function to returns a vector of Euler angles given a rotation matrix
 % e = ( roll(x); pitch(y); yaw(z) )
 %
-% Aldo Diaz, University of Campinas, 2019
+% Aldo Diaz, University of Campinas, 2020
 
     %assert(isRotationMatrix(R))
     sy = sqrt(R(1,1)*R(1,1)+R(2,1)*R(2,1));

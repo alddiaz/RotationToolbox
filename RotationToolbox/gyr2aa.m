@@ -1,4 +1,4 @@
-function [omega_hat, theta] = gyr2aa(gyro, T, bias)
+function [omega_hat, theta] = gyr2aa(omega_gyro, T, bias)
 %% Function to convert gyroscopic measurements to axis-angle parameters
 %
 % 'gyro' is a 3-D vector of angular velocity measurements from gyro sensor
@@ -15,18 +15,18 @@ if nargin < 3
     end
 end
 
-if size(gyro, 2) > 1
-    gyro = gyro';
+if size(omega_gyro, 2) > 1
+    omega_gyro = omega_gyro';
 end
 
 if size(bias, 2) > 1
     bias = bias';
 end
 
-gyro = gyro - bias; % bias compensation
+omega_gyro = omega_gyro - bias; % bias compensation
 
-omegaN = norm(gyro); % (rad/s)
-omega_hat = gyro/omegaN;
-theta = omegaN*T; % (rad)
+omegaNorm = norm(omega_gyro); % (rad/s)
+omega_hat = omega_gyro/omegaNorm;
+theta = omegaNorm*T; % (rad)
 
 end

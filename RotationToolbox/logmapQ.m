@@ -1,5 +1,5 @@
-function Omega = logmap(R, method)
-%% The logarithm map (inverse of the exponential map)
+function S = logmapQ(Q, method)
+%% The logarithm map in the quaternion space (inverse of the exponential map)
 %
 % The parameter 'method' can have the values
 % 'std'          The standard formula
@@ -12,20 +12,20 @@ if nargin < 2
     method = 'std';
 end
 
-theta = acos((trace(R)-1)/2);
+theta = 2*acos(sum(diag(Q))/4);
 
 switch method
     case 'std' % standard formula
-        Omega = -(R-R')/(2*sin(theta));
+        S = (Q-Q')/(2*sin(theta/2));
 
     case 'CH' % Cayley-Hamilton theorem's result
-        Omega = (2*cos(theta)+1)*eye(3)/(2*sin(theta))+sin(theta)*R/(cos(theta)-1)+R*R/(2*sin(theta));
+        S = -(2*cos(theta/2)+1)*eye(4)/(2*sin(theta/2))-sin(theta/2)*Q/(cos(theta/2)-1)-Q*Q/(2*sin(theta/2));
 
     case 'ln' % matrix logarithm
-        Omega = -logm(R)/theta;
+        S = 2*logm(Q)/theta;
         
     otherwise
-        Omega = -(R-R')/(2*sin(theta));
+        S = (Q-Q')/(2*sin(theta/2));
 end
 
 end

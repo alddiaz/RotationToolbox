@@ -9,7 +9,8 @@ if nargin < 2
     unit_quaternion = false;
 end
 
-% If 'q' has been previously normalized
+% if 'q' has been previously normalized
+% use 'unit_quaternion=1'
 if unit_quaternion
     q = -q;
 end

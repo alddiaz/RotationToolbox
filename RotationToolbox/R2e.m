@@ -2,7 +2,7 @@ function e = R2e(R)
 %% Function to returns a vector of Euler angles given a rotation matrix
 % e = [ roll(x); pitch(y); yaw(z) ]
 %
-% Aldo Diaz, University of Campinas, 2019
+% Aldo Diaz, University of Campinas, 2020
 
 [U,S,V] = svd(R);
 R = U*V';

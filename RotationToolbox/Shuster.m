@@ -4,7 +4,7 @@ function q = Shuster(R)
 % M. D. Shuster, "A Survey of Attitude Representations", In: The Journal of
 % Astronautical Sciences, Vol. 41, No. 4, pp. 439-517, 1993.
 %
-% Aldo Diaz, University of Campinas, 2019
+% Aldo Diaz, University of Campinas, 2020
 
 C = [ 1+R(1,1)+R(2,2)+R(3,3)    R(2,3)-R(3,2)           R(3,1)-R(1,3)           R(1,2)-R(2,1);
         R(2,3)-R(3,2)           1+R(1,1)-R(2,2)-R(3,3)	R(2,1)+R(1,2)           R(1,3)+R(3,1);

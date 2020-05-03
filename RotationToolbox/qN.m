@@ -4,7 +4,7 @@ function q = qN(q)
 % q1 and a vector component given by v = [q2, q3, q4]'
 % q(1) ≥ 0 is enforced to get unambiguous rotation representations
 %
-% Aldo Diaz, University of Campinas 2019
+% Aldo Diaz, University of Campinas 2020
 
 if norm(q) ~= 1 % if 'q' is a non-unit quaternion
     q = q/norm(q);
