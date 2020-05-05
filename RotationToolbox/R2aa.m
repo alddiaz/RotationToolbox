@@ -1,16 +1,25 @@
-function [omega_hat, theta] = R2aa(R)
+function [omega_hat, theta] = R2aa(R, method)
 %% Function that returns the axis-angle parameters of a rotation matrix
+%
+% The parameter 'method' can have the values
+% 'std1'         The standard formula in vector form
+% 'std2'         The standard formula in matrix form
+% 'CH'           The Cayley-Hamilton result
+% 'ln'           The matrix logarithm
 %
 % Aldo Diaz, University of Campinas, 2020
 
-theta = acos((trace(R)-1)/2); % angle in radians
+if nargin < 2
+    method = 'std1';
+end
 
-if theta ~= 0
-    omega_hat = -[ R(3,2)-R(2,3);
-                   R(1,3)-R(3,1);
-                   R(2,1)-R(1,2) ]/(2*sin(theta)); % axis
-else
-    omega_hat = [0; 0; 0];
+switch method
+    case 'std1'
+        [omega_hat, theta] = logmap(R, method);
+
+    otherwise
+        [Omega, theta] = logmap(R, method);
+        omega_hat = skew2v(Omega);
 end
 
 end

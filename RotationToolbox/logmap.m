@@ -1,21 +1,27 @@
-function Omega = logmap(R, method)
+function [Omega, theta] = logmap(R, method)
 %% The logarithm map (inverse of the exponential map)
 %
 % The parameter 'method' can have the values
-% 'std'          The standard formula
-% 'C-H'          The Cayley-Hamilton result
+% 'std1'         The standard formula in vector form (returns a vector)
+% 'std2'         The standard formula in matrix form (returns a matrix)
+% 'CH'           The Cayley-Hamilton result
 % 'ln'           The matrix logarithm
 %
 % Aldo Diaz, University of Campinas, 2020
 
 if nargin < 2
-    method = 'std';
+    method = 'std1';
 end
 
-theta = acos((trace(R)-1)/2);
+theta = acos((trace(R)-1)/2); % angle in radians
 
 switch method
-    case 'std' % standard formula
+    case 'std1' % standard formula in vector form
+        Omega = -[ R(3,2)-R(2,3);
+                   R(1,3)-R(3,1);
+                   R(2,1)-R(1,2) ]/(2*sin(theta)); % axis
+
+    case 'std2' % standard formula in matrix form
         Omega = -(R-R')/(2*sin(theta));
 
     case 'CH' % Cayley-Hamilton theorem's result

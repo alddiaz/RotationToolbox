@@ -8,7 +8,7 @@ function q = R2q(R, method, unit_quaternion)
 % 'ShepperdMarkley'    Shepperd-Markley method
 % 'Shuster'            Shuster's method
 %
-% 'unit_quaternion=true' returns a unit quaternion, with q(1)>0
+% 'unit_quaternion=true' returns a unit quaternion
 %
 % Aldo Diaz, University of Campinas, 2020
 

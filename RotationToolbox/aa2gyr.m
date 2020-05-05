@@ -1,4 +1,4 @@
-function gyro = aa2gyr(omega_hat, theta, T, bias)
+function gyro = aa2gyr(omega_hat, theta, bias, T)
 %% Function to convert axis-angle parameters to gyroscopic measurements
 %
 % 'omega_hat' is a unit vector axis of rotation
@@ -10,10 +10,10 @@ function gyro = aa2gyr(omega_hat, theta, T, bias)
 % Aldo Diaz, University of Campinas, 2020
 
 if nargin < 4
-    bias = [0, 0, 0]'; % (ideal) unbiased sensor
+    T = 1; % sampling frequency is 1 Hz
     
     if nargin < 3;
-        T = 1; % sampling frequency is 1 Hz
+        bias = [0, 0, 0]'; % (ideal) unbiased sensor
     end
 end
 
