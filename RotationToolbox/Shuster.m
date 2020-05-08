@@ -2,7 +2,7 @@ function q = Shuster(R)
 %% Function to convert a rotation matrix to a unit quaternion
 % Reference:
 % M. D. Shuster, "A Survey of Attitude Representations", In: The Journal of
-% Astronautical Sciences, Vol. 41, No. 4, pp. 439-517, 1993.
+% Astronautical Sciences, vol. 41, no. 4, pp. 439-517, 1993.
 %
 % Aldo Diaz, University of Campinas, 2020
 

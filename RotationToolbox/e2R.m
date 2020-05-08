@@ -3,6 +3,9 @@ function R = e2R(e, unit)
 % e = [ roll(x); pitch(y); yaw(z) ]
 % R = Rx*Ry*Rz
 %
+% The parameter 'unit' can have the values:
+% 'deg'    the angles in 'e' are specified in degrees, otherwise use radians
+%
 % Aldo Diaz, University of Campinas, 2020
 
 if nargin < 2

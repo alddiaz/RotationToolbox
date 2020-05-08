@@ -1,5 +1,5 @@
 function Q = q2Q(q)
-%% Function to convert a quaternion vector to a quaternion matrix
+%% Function to convert a quaternion vector to a quaternion matrix 'Q'
 %
 % Aldo Diaz, University of Campinas, 2020
 

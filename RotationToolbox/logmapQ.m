@@ -12,21 +12,23 @@ if nargin < 2
     method = 'std';
 end
 
+Q = Q/norm(Q2q(Q)); % unit quaternion normalization
+
 theta = 2*acos(sum(diag(Q))/4); % angle in radians
 
 if theta ~= 0
     switch method
         case 'std' % standard formula
-            S = (Q-Q')/(2*sin(theta/2));
+            S = -(Q-Q')/(2*sin(theta/2));
 
         case 'CH' % Cayley-Hamilton theorem's result
-            S = -(2*cos(theta/2)+1)*eye(4)/(2*sin(theta/2))-sin(theta/2)*Q/(cos(theta/2)-1)-Q*Q/(2*sin(theta/2));
+            S = (2*cos(theta/2)+1)*eye(4)/(2*sin(theta/2))+sin(theta/2)*Q/(cos(theta/2)-1)+Q*Q/(2*sin(theta/2));
 
         case 'ln' % matrix logarithm
-            S = 2*logm(Q)/theta;
+            S = -2*logm(Q)/theta;
         
         otherwise
-            S = (Q-Q')/(2*sin(theta/2));
+            S = -(Q-Q')/(2*sin(theta/2));
     end
 else
     S = v2skew([0; 0; 0], 4);

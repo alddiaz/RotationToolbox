@@ -1,8 +1,8 @@
-function q = R2q(R, method, unit_quaternion)
+function q = R2q(R, method)
 %% Function to convert a rotation matrix to a quaternion
 %
 % The parameter 'method' can have the values
-% 'BarItzhack'         Bar-Itzhack method
+% 'BarItzhack'         Bar-Itzhack's method
 % 'Cayley'             Cayley's factorization method
 % 'Sarabandi'          Arithmetic optimization method
 % 'ShepperdMarkley'    Shepperd-Markley method
@@ -39,9 +39,11 @@ switch method
         q = BarItzhack(R);
 end
 
-% Unit quaternion normalization
-if unit_quaternion
-    q = qN(q);
+% The scalar quaternion component is positive by convention.
+% (q(1) > 0 is enforced to get unambiguous rotation representations)
+% This does not change the rotation the quaternion represents, since q and -q denote the same rotation.
+if q(1) < 0
+    q = -q;
 end
 
 end

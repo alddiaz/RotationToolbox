@@ -13,13 +13,13 @@ end
 
 switch method
     case 'CH' % trigonometric equivalence
-        Q = cos(theta/2)*eye(4)+sin(theta/2)*S(omega_hat);
+        Q = cos(theta/2)*eye(4)-sin(theta/2)*S(omega_hat);
     
     case 'exp' % the exponential map (matrix exponential)
-        Q = expm((theta/2)*S(omega_hat));
+        Q = expm(-(theta/2)*S(omega_hat));
     
     otherwise
-        Q = cos(theta/2)*eye(4)+sin(theta/2)*S(omega_hat);
+        Q = cos(theta/2)*eye(4)-sin(theta/2)*S(omega_hat);
 
 end
 

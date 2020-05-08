@@ -1,5 +1,5 @@
 function Sbar = Sbar(q)
-%% The matrix S(q)
+%% The matrix Sbar(q)
 %
 % Aldo Diaz, University of Campinas, 2020
 

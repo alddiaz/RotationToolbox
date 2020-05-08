@@ -2,9 +2,9 @@ function q = ShepperdMarkley(R)
 %% Function to convert a rotation matrix to a quaternion using Shepperd's method with Markley's variation. 
 % References:
 % S. W. Shepperd, "Quaternion from rotation matrix",
-% Journal of Guidance and Control, Vol. 1, No. 3, pp. 223-224, 1978.
+% Journal of Guidance and Control, vol. 1, no. 3, pp. 223-224, 1978.
 % F. L. Markley, "Unit quaternion from rotation matrix",
-% Journal of Guidance, Control and Dynamics, Vol. 31, No. 2, pp. 440-442, 2008.
+% Journal of Guidance, Control and Dynamics, vol. 31, no. 2, pp. 440-442, 2008.
 %
 % Aldo Diaz, University of Campinas, 2020
 

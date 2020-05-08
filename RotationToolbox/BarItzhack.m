@@ -1,8 +1,8 @@
 function q = BarItzhack(R)
 %% Function to convert a rotation matrix to a quaternion using Bar-Itzhack's method
 % Reference:
-% I. Bar-Itzhack, "An algorithm for computing the quaternion from the rotation matrix",
-% Journal of Guidance, Vol 23, No. 26, pp. 1085-1087, 2000. 
+% I. Y. Bar-Itzhack, "New method for extracting the quaternion from a rotation matrix",
+% Journal of Guidance, vol. 23, no. 6, pp. 1085-1087, 2000. 
 %
 % Aldo Diaz, University of Campinas, 2020
 
