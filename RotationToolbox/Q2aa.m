@@ -8,11 +8,8 @@ function [omega_hat, theta] = Q2aa(Q, method)
 %
 % Aldo Diaz, University of Campinas, 2020
 
-if nargin < 3
-    unit_quaternion = false;
-    if nargin < 2
-        method = 'std';
-    end
+if nargin < 2
+    method = 'std';
 end
 
 [S, theta] = logmapQ(Q, method);

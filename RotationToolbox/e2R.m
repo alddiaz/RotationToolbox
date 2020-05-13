@@ -4,16 +4,16 @@ function R = e2R(e, unit)
 % R = Rx*Ry*Rz
 %
 % The parameter 'unit' can have the values:
-% 'deg'    the angles in 'e' are specified in degrees, otherwise use radians
+% 'deg'    Euler angles in 'e' are specified in degrees
 %
 % Aldo Diaz, University of Campinas, 2020
 
 if nargin < 2
-    unit = 'rad'; % angle given in radians
+    unit = 'rad'; % angles given in radians
 end
 
 if unit == 'deg'
-    e = e*180/pi; % angle given in degrees
+    e = e*pi/180; % angles given in degrees
 end
 
 Rx = [ 1      0          0;
