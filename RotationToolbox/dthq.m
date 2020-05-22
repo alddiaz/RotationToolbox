@@ -4,6 +4,10 @@ function delta_theta = dthq(q1, q2)
 %
 % Aldo Diaz, University of Campinas 2020
 
-delta_theta = 2*acos(q2'*q1);
+lambda1 = norm(q1);
+lambda2 = norm(q2);
+
+% delta_theta = 2*acos(q2'*q1/lambda1/lambda2); % angle in radians
+delta_theta = 4*atan2(norm(q1/lambda1-q2/lambda2),norm(q1/lambda1+q2/lambda2)); % numerically more stable
 
 end

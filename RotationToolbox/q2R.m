@@ -3,7 +3,7 @@ function R = q2R(q)
 %
 % Aldo Diaz, University of Campinas, 2020
 
-norm_square = q(1)^2+q(2)^2+q(3)^2+q(4)^2; % square of the norm
+norm_square = q(1)^2+q(2)^2+q(3)^2+q(4)^2; % quaternion squared norm
 
 if norm_square ~= 0 % 'q' is non-zero quaternion
     R = [ q(1)^2+q(2)^2-q(3)^2-q(4)^2  2*(q(2)*q(3)+q(1)*q(4))      2*(q(2)*q(4)-q(1)*q(3));
@@ -15,4 +15,6 @@ if norm_square ~= 0 % 'q' is non-zero quaternion
     end
 else
     R = eye(3);
+end
+
 end
