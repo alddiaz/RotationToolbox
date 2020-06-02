@@ -19,14 +19,14 @@ theta = 2*atan2(norm(skew2v(Q)),sum(diag(Q))/4); % numerically more stable
 if theta ~= 0
     switch method
         case 'std' % standard formula
-            S = -(Q-Q')/(2*sin(theta/2))/lambda);
+            S = -(Q-Q')/(2*sin(theta/2))/lambda;
 
         case 'CH' % Cayley-Hamilton theorem's result
             S = (2*cos(theta/2)+1)*eye(4)/(2*sin(theta/2))+sin(theta/2)*Q/(cos(theta/2)-1)/lambda+Q*Q/(2*sin(theta/2))/lambda/lambda;
 
         case 'ln' % matrix logarithm
             S = -2*logm(Q/lambda)/theta;
-        
+
         otherwise
             S = -(Q-Q')/(2*sin(theta/2))/lambda;
     end
